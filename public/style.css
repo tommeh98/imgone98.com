@@ -1,0 +1,180 @@
+body {
+	background-color: #efefef;
+}
+
+nav {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 999;
+
+	box-shadow: 0px 8px 4px #33aa33;
+
+}
+
+nav ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #222;
+}
+
+nav li {
+    float: right;
+}
+
+nav li a {
+	display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav li a:hover {
+	background-color: #33aa33;
+}
+
+
+nav #left {
+	float: left;
+}
+
+
+div {
+	background-color: #222;
+	box-shadow: 5px 5px #33aa33;
+	color: white;
+	position: relative;
+	padding: 10px;
+	margin-top: 10%;
+	margin-right: 5px;
+}
+
+ /* unvisited link */
+#post a:link {
+    color: #33aa33;
+}
+
+/* visited link */
+#post a:visited {
+    color: #33aa33;
+}
+
+/* mouse over link */
+#post a:hover {
+    color: #ff3300;
+}
+
+/* selected link */
+#post a:active {
+    color: #ff3300;
+}
+
+b {
+	color: #33aa33;
+	font-weight: lighter;
+}
+
+abbr {
+	text-decoration: #33aa33 underline wavy;
+}
+
+p {
+
+}
+
+u {
+	text-decoration: underline #33aa33; 
+}
+
+h4 {
+	margin: 5px;
+}
+
+/* Lists */
+ul {
+	margin: 5px;
+	list-style: circle outside;
+	color: #33aa33;
+}
+
+li {
+
+}
+
+blockquote {
+	padding-left: 15px;
+	border-left: 5px double #33aa33 ;
+	width: 60%;
+	font-style: italic;
+}
+
+/* Tables */
+table {
+	border-collapse: collapse;
+	margin-left: 5em;
+}
+
+caption {
+	color: #33aa33;
+	padding-bottom: 0.2em;
+}
+
+th {
+	border: #33aa33 solid 1px;
+	padding: 0.2em;
+}
+
+td {
+	border: #33aa33 solid 1px;
+	padding: 0.2em;
+}
+
+pre {
+	margin-left: 5em;
+	width: 75%;
+	border: #33aa33 dotted 2px;
+	padding: 5px;
+}
+
+/* About Me Page */
+#picture {
+	width: 40%;
+	height: 40%;
+	float: left;
+}
+
+#hobbies {
+	width: 50%;
+	float: right;
+}
+
+#iam {
+	width: 50%;
+	float: right;
+	margin-top: 2%;
+}
+
+#about {
+	width: 40%;
+	float: left;
+	margin-top: 2%;
+}
+
+#about a {
+	color: blue;
+}
+
+
+#post {
+	width: 80%;
+	left: 10%;
+}
+
+span {
+	color: white;
+}
