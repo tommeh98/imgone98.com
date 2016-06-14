@@ -1,6 +1,22 @@
 <?php
 
-return [
+return array(
+    "driver" => "smtp",
+    "host" => "mailtrap.io",
+    "port" => 2525,
+    "from" => array(
+        "address" => "ImGone7198@gmail.com",
+        "name" => "Tim Ford"
+    ),
+    "username" => "4e12c0e3283e51",
+    "password" => "120bbd3402b66d",
+    "sendmail" => "/usr/sbin/sendmail -bs",
+    "pretend" => false
+);
+
+
+
+//return [
 
     /*
     |--------------------------------------------------------------------------
@@ -16,7 +32,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+//    'driver' => env('MAIL_DRIVER', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -29,7 +45,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+  //  'host' => env('MAIL_HOST', 'mailtrap.io'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +58,7 @@ return [
     |
     */
 
-    'port' => env('MAIL_PORT', 587),
+  //  'port' => env('MAIL_PORT', 2525),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +71,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+//    'from' => ['address' => 'tommehwalks@gmail.com', 'name' => 'Tom Walker'],
 
     /*
     |--------------------------------------------------------------------------
@@ -68,7 +84,7 @@ return [
     |
     */
 
-    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+//    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +97,7 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+//    'username' => env('4e12c0e3283e51'),
 
     /*
     |--------------------------------------------------------------------------
@@ -94,7 +110,7 @@ return [
     |
     */
 
-    'password' => env('MAIL_PASSWORD'),
+//    'password' => env('120bbd3402b66d'),
 
     /*
     |--------------------------------------------------------------------------
@@ -107,6 +123,9 @@ return [
     |
     */
 
-    'sendmail' => '/usr/sbin/sendmail -bs',
+//    "sendmail" => "/usr/sbin/sendmail -bs",
+//    "pretend" => false
 
-];
+//]; 
+
+

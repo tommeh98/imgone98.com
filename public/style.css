@@ -178,3 +178,15 @@ pre {
 span {
 	color: white;
 }
+
+#form {
+	width: 60%;
+	margin-left: 20%;
+}
+
+section {
+	margin: 2em;
+}
+.checkbox label {
+	cursor: pointer;
+}
