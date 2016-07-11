@@ -3,79 +3,102 @@
 
 @section('content')
 
-<div id="post">
-    <p> I am writing <a href="">this post</a> to help <b>visualize</b> the design of the content of my other blog posts! Yes, <b>I am</b> intending this to stay and be the first actual post on my website blog. 
-    </p>
-    <p>
-    Here we go! As you can see <a href="">this</a> link appears the same green color as the rest of the website. So does the <b>bold</b> text. The link is also underlined to tell you it is a clickable link.  </p><p>
-    I will use the college I am going to attend as an example for abbreviations. My college of choice is <abbr title="Western Kentucky University">WKU</abbr>. As you can see it is <u>underlined</u> with the normal green color and wavy. If you hover your mouse over the text for a few seconds you will see what the abbreviation stands for. The <u>underlined</u> part is simply a green line under the text.
-    </p> 
+@if ($posts->isEmpty())
+    <p> There are no posts for these requirements. </p>
+@else
+    @if($page == 1)
+        @for($i = 0; $i < 10; $i++)
+            @if(count($posts) > $i) 
+                <div class="post">
 
-    <h4><u>TODO</u></h4>
-    <ul>
-        <li><span>Address</span></li>
-        <li><span>Tons of other stuffs</span></li>
-        <li><span>Make table look better</span></li>
-        <li><span>Citations</span></li>
-        <li><span>Font and Basic Text Fixes</span></li>
-        <li><span>Description Lists</span></li>
-    </ul>
+                    <h1> <a href="/blog/{{ $posts[$i]->url_title }}"> {{$posts[$i]->title}} </a></h1>
 
-    <p> Lets try a <b>blockquote</b>, I'm sure I'll use plenty of those. </p>
+                    <p class="date"> <i> {{ date('F d, Y    g:i:s a', strtotime($posts[$i]->created_at)) }} </i></p>
 
-    <blockquote cite="HAHAHAHAHA">
-        <p>I am a blockquote. I have the double border on the left of me and I am displayed in italics. </p>
-        <footer> - <a href="">I belong to myself</a></footer>
-    </blockquote>
+                   {{-- @if(strlen($posts[$i]->content) >= 500)
+                        <p class="content"> {!! closeUnclosedTags(substr($posts[$i]->content, 0, 500) . ' <a href="/blog/$posts[$i]->url_title">[...] </a>') !!}  </p>
+                    @else
+                        <p class="content"> {!! $posts[$i]->content !!}  </p>
+                    @endif --}}
 
-    <p> I like it, how about a table </p>
+                    @if(strlen($posts[$i]->content) >= 500)
+                        <p class="content"> {!! substr($posts[$i]->content, 0, 500) !!} <a href="/blog/{{$posts[$i]->url_title}}">[...] </a></p> 
+                    @else
+                        <p class="content"> {!! $posts[$i]->content !!}  </p>
+                    @endif
 
-    <table>
-        <caption> I Am a Caption. </caption>
-        <thead>
-            <tr>
-                <th> Header 1 </th>
-                <th> Header 2 </th>
-                <th> Header 3 </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr> 
-                <td> Content 1 </td>
-                <td> Content 2 </td>
-                <td> Content 3 </td>
-            </tr>
-            <tr> 
-                <td> Content 4 </td>
-                <td> Content 5 </td>
-                <td> Content 6 </td>
-            </tr>
-            <tr> 
-                <td> Content 7 </td>
-                <td> Content 8 </td>
-                <td> Content 9 </td>
-            </tr>
-        </tbody>
-    </table>
+                    <p class="tags"> Tags: 
+                            {{ generateTags($posts[$i]->tags) }}
+                                <br> 
+                        </p>
+                </div>
+            @endif
+        @endfor
+    @else 
+        @for($i = (($page-1)*10); $i < ($page * 10); $i++)
+            @if(count($posts) > $i)
+                <div class="post">
 
-    <p> I'm going to have to play with tables more when I actually need it for something. The way it looks will probably depend more on the content of the table. </p>
+                    <h1> <a href="/blog/{{ $posts[$i]->url_title }}"> {{$posts[$i]->title}} </a></h1>
 
-    <p> I'll probably end up needing a lot of citations so here is a made-up one. <cite>My Website</cite> by Timothy Ford. Created in 2016. Kinda confusing... adding to todo list and moving on for now. </p>
+                    <p class="date"> <i> {{ date('F d, Y    g:i:s a', strtotime($posts[$i]->created_at)) }} </i></p>
 
-    <p> The code and pre tag, here's a snippet of code in java.</p>
+                   {{-- @if(strlen($posts[$i]->content) >= 500)
+                        <p class="content"> {!! closeUnclosedTags(substr($posts[$i]->content, 0, 500) . ' <a href="/blog/$posts[$i]->url_title">[...] </a>') !!}  </p>
+                    @else
+                        <p class="content"> {!! $posts[$i]->content !!}  </p>
+                    @endif --}}
 
-    <code><pre>
-public class HelloWorld {
+                    @if(strlen($posts[$i]->content) >= 500)
+                        <p class="content"> {!! substr($posts[$i]->content, 0, 500) !!} <a href="/blog/{{$posts[$i]->url_title}}">[...] </a></p> 
+                    @else
+                        <p class="content"> {!! $posts[$i]->content !!}  </p>
+                    @endif
 
-    public static void main(String[] args) {
-        // Prints "Hello, World" to the terminal window.
-        System.out.println("Hello, World");
-    }
+                    <p class="tags"> Tags: 
+                            {{ generateTags($posts[$i]->tags) }}
+                                <br> 
 
-}
-</pre></code>
+                        </p>
+                </div>
+            @endif
+        @endfor
+    @endif
+
+    
+@endif
 
 
-</div>
+@if($page <= 1)
+@else
+    <div style="float:left; margin-bottom: 5em;"><a href="/{{$page-1}}" style="padding: 1em; font-size: 2em;"> <- Previous Posts</a></div>
+@endif
+
+@if(count($posts)+1 >= $page*10)
+
+    <div style="float:right; margin-bottom: 5em;"><a href="/{{$page+1}}" style="padding: 1em; font-size: 2em;">Newer Posts -></a></div>
+@endif
 
 @endsection
+
+ <?php
+
+function generateTags($tags) {
+    $tagsArray = array();
+    $tag = "";
+    for($p = 0; $p <= strlen($tags); $p++) {
+        if(substr($tags, $p, 1) == ' ') {
+            array_push($tagsArray, $tag);
+            $tag = "";
+        } else {
+            $tag .= substr($tags, $p, 1);
+        }
+
+    }
+    array_push($tagsArray, $tag);
+
+    foreach ($tagsArray as $tag) {
+        echo "<a href='/archive/tags/" . $tag  . "'>" . $tag . '</a> ';
+    }
+}
+?> 

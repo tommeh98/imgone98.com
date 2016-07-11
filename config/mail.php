@@ -1,22 +1,6 @@
 <?php
 
-return array(
-    "driver" => "smtp",
-    "host" => "mailtrap.io",
-    "port" => 2525,
-    "from" => array(
-        "address" => "ImGone7198@gmail.com",
-        "name" => "Tim Ford"
-    ),
-    "username" => "4e12c0e3283e51",
-    "password" => "120bbd3402b66d",
-    "sendmail" => "/usr/sbin/sendmail -bs",
-    "pretend" => false
-);
-
-
-
-//return [
+return [
 
     /*
     |--------------------------------------------------------------------------
@@ -32,7 +16,7 @@ return array(
     |
     */
 
-//    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +29,7 @@ return array(
     |
     */
 
-  //  'host' => env('MAIL_HOST', 'mailtrap.io'),
+    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
     /*
     |--------------------------------------------------------------------------
@@ -58,7 +42,7 @@ return array(
     |
     */
 
-  //  'port' => env('MAIL_PORT', 2525),
+    'port' => env('MAIL_PORT', 587),
 
     /*
     |--------------------------------------------------------------------------
@@ -71,7 +55,7 @@ return array(
     |
     */
 
-//    'from' => ['address' => 'tommehwalks@gmail.com', 'name' => 'Tom Walker'],
+    'from' => ['address' => null, 'name' => null],
 
     /*
     |--------------------------------------------------------------------------
@@ -84,7 +68,7 @@ return array(
     |
     */
 
-//    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+    'encryption' => env('MAIL_ENCRYPTION', 'tls'),
 
     /*
     |--------------------------------------------------------------------------
@@ -97,7 +81,7 @@ return array(
     |
     */
 
-//    'username' => env('4e12c0e3283e51'),
+    'username' => env('MAIL_USERNAME'),
 
     /*
     |--------------------------------------------------------------------------
@@ -110,7 +94,7 @@ return array(
     |
     */
 
-//    'password' => env('120bbd3402b66d'),
+    'password' => env('MAIL_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------
@@ -123,9 +107,6 @@ return array(
     |
     */
 
-//    "sendmail" => "/usr/sbin/sendmail -bs",
-//    "pretend" => false
+    'sendmail' => '/usr/sbin/sendmail -bs',
 
-//]; 
-
-
+];

@@ -7,8 +7,8 @@
     <form role="form" method="POST" action="{{ url('/login') }}">
             {{ csrf_field() }}
         <section>
-            <label for="email">E-Mail Address</label>
-            <input id="email" type="email" name="email" value="{{ old('email') }}">
+            <label id="left" for="email">E-Mail Address</label>
+            <input id="right" type="email" name="email" value="{{ old('email') }}">
 
             @if ($errors->has('email'))
                 <span>

@@ -1,19 +1,14 @@
-
-
 <nav>
 	<ul>
-		<li id="left"> <a href="/ "> Tom Walker </a></li> <!-- Maybe just logo? -->
+		<li id="left"> <a href="/ "> Tom Walker </a></li> 
 
-		<!-- <li> <a href=" "> Login/Register</a></li> -->
-		@if (Auth::guest())
-            <li><a href="{{ url('/login') }}">Login/Register</a></li>
-        @else
-            <li>
-                    <li><a href="{{ url('/logout') }}"><i></i>Logout</a></li>
-            </li>
-        @endif
-                    
-		<li> <a href=" "> Contact </a></li>
+		@if(Auth::check())
+			 <li> <a href=""> Hi </a> </li> 
+		@endif
+
+		<li> <a href="/archive/date/oldest_newest/">Archive</a></li>
+                	    
+		<li> <a href="/contactMe"> Contact </a></li>
 		<li> <a href="/aboutMe"> About </a></li>
 	</ul>
 </nav>

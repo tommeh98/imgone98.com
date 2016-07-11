@@ -11,14 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/aboutMe', function() {
 	return view('aboutMe');
 });
 
-Route::auth();
+Route::get('/contactMe', function() {
+	return view('contactMe');
+});
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', function() {
+	return Redirect::to('/1');
+});
+
+Route::get('/{page?}', 'PostController@index');
+Route::get('/blog/{url_title?}', 'PostController@show');
+
+Route::get('/archive/{filter?}/{order?}', 'ArchiveController@displayAll');
+
+Route::post('/archive/{filter?}/{order?}', 'ArchiveController@displayAll');

@@ -4,7 +4,7 @@
 @section('content')
 
 <div>
-	<h1> In Progress, Please Check Back Soon! </h1>
+	<h1> Please don't bother me yet... Soon, very soon! </h1>
 </div>
 
 @endsection

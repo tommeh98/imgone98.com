@@ -1,5 +1,7 @@
 body {
 	background-color: #efefef;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
 }
 
 nav {
@@ -34,8 +36,25 @@ nav li a {
     font-size: 18px;
 }
 
+
+nav li a:link {
+	color: #fff;
+}
+
+/* visited link */
+nav li a:visited {
+	color: #fff;
+}
+
+/* mouse over link */
 nav li a:hover {
+	color: #fff;
 	background-color: #33aa33;
+}
+
+/* selected link */
+nav li  a:active {
+	color: #fff;
 }
 
 
@@ -50,27 +69,28 @@ div {
 	color: white;
 	position: relative;
 	padding: 10px;
-	margin-top: 10%;
+	margin-top: 2em;
+	top: 3em;
 	margin-right: 5px;
 }
 
  /* unvisited link */
-#post a:link {
+a:link {
     color: #33aa33;
 }
 
 /* visited link */
-#post a:visited {
+a:visited {
     color: #33aa33;
 }
 
 /* mouse over link */
-#post a:hover {
+a:hover {
     color: #ff3300;
 }
 
 /* selected link */
-#post a:active {
+a:active {
     color: #ff3300;
 }
 
@@ -126,12 +146,12 @@ caption {
 
 th {
 	border: #33aa33 solid 1px;
-	padding: 0.2em;
+	padding: 0.5em;
 }
 
 td {
 	border: #33aa33 solid 1px;
-	padding: 0.2em;
+	padding: 0.5em;
 }
 
 pre {
@@ -170,9 +190,12 @@ pre {
 }
 
 
-#post {
+.post {
 	width: 80%;
 	left: 10%;
+	margin-top: 2em;
+	top: 3em;
+	padding: 1em;
 }
 
 span {
@@ -184,9 +207,46 @@ span {
 	margin-left: 20%;
 }
 
+#form #right {
+	left: 15px;
+}
+
+#form #left {
+}
+
 section {
 	margin: 2em;
 }
+
 .checkbox label {
 	cursor: pointer;
+}
+
+h1 {
+	color: #33aa33;
+	font-size: 2em;
+	font-weight: lighter;
+}
+
+.date {
+
+}
+
+.content {
+	text-indent: 2em;
+}
+
+#search-bar {
+
+}
+
+.comment {
+	border-color: #33aa33;
+	border-style: double;
+	padding: 1em;
+
+}
+
+.comment p {
+	margin: 0px;
 }
